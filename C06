@@ -1,0 +1,52 @@
+/*
+ex00
+#include <unistd.h>
+
+char ft_putname(char* nm)
+{
+    int i;
+
+    i = 0;
+
+    while (nm[i] != '\0')
+    {
+        i++;
+    }
+    write(1,nm,i);
+}
+
+int main(int argc, char**argv)
+{
+    ft_putname(argv[0]);
+}
+*/
+
+#include <unistd.h>
+
+char ft_print_params(char* nm)
+{
+    int i;
+
+    i = 0;
+
+    while (nm[i] != '\0')
+    {
+        i++;
+    }
+    write(1,nm,i);
+    write(1,"\n",1);
+}
+
+
+int main(int argc, char**argv)
+{
+    int temp;
+
+    temp = 1;
+
+    while (temp != argc)
+    {
+        ft_print_params(argv[temp]);
+        temp++;
+    }
+}
